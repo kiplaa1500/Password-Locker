@@ -41,3 +41,24 @@ def create_details(user_name, site_name, account_name, password):
 	'''
 	new_details = Details(user_name, site_name, account_name, password)
 	return new_details
+
+
+def save_details(details):
+	'''
+	Function to save a newly created details
+	'''
+	Details.save_details(details)
+
+
+def display_details(user_name):
+	'''
+	Function to display details saved by a user
+	'''
+	return Details.display_details(user_name)
+
+
+def copy_details(site_name):
+	'''
+	Function to copy a details details to the clipboard
+	'''
+	return Details.copy_details(site_name)
