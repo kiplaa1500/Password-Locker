@@ -62,3 +62,10 @@ class Details:
              Function to save newly created user deatils
              """
              Details.details_list.append(self)
+
+        def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+             """
+             Function for generating 8 character password
+             """
+             gen_pass = ''.join(random.choice(char) for _ in range(size))
+             return gen_pass
