@@ -27,7 +27,7 @@ class User:
         """
         User.users_list.append(self)
         
-    class Details:
+class Details:
         """
         Class for creating account details.
         """
@@ -45,3 +45,14 @@ class User:
                 if (user.first_name == first_name and user.password == password):
                     current_user = user.first_name
             return current_user
+        
+        def __init__(self, user_name, site_name, account_name, password):
+	         '''
+	          Method to define the properties for each user object will hold.
+	         '''
+
+	     # instance variables
+	         self.user_name = user_name
+	         self.site_name = site_name
+	         self.account_name = account_name
+	         self.password = password
