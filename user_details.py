@@ -56,3 +56,9 @@ class Details:
 	         self.site_name = site_name
 	         self.account_name = account_name
 	         self.password = password
+          
+        def save_details(self):
+             """
+             Function to save newly created user deatils
+             """
+             Details.details_list.append(self)
