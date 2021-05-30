@@ -81,4 +81,15 @@ class Details:
 		        if detail.user_name == user_name:
 			        user_details_list.append(detail)
 	        return user_details_list
+     
+     
+    #  method for returning details matching values earlier entered 
+        @classmethod
+        def find_by_site_name(cls, site_name):
+             """
+             Method that returns details that matches the feeded one
+             """
+             for detail in cls.details_list:
+                 if detail.site_name == site_name:
+                         return detail
 
