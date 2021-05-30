@@ -92,4 +92,16 @@ class Details:
              for detail in cls.details_list:
                  if detail.site_name == site_name:
                          return detail
+                     
+                     
+        
+        
+        @classmethod
+        def copy_details(cls,site_name):
+            """
+            Method that copies details
+            """
+            find_detail =Details.find_by_site_name(site_name)
+            return pyperclip.copy(find_detail.password)
+
 
