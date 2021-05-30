@@ -75,6 +75,15 @@ class TestDetails(unittest.TestCase):
             facebook.save_details()
             self.assertEqual(len(Details.details_list),2)
             
+        def tearDown(self):
+            """
+            Funtion to clear the details list after every test.
+            
+            """
+            Details.details_list = []
+            User.users_list = []
+
+
 
 
 
