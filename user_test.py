@@ -82,6 +82,20 @@ class TestDetails(unittest.TestCase):
             """
             Details.details_list = []
             User.users_list = []
+            
+            
+            
+        def test_display_details(self):
+            """Test to check if the display details method, display the correct details"""
+            self.new_details.save_details()
+            twitter = Details('Dennis', 'Facebook', 'Kiplangat', 'kiplangat18')
+            twitter.save_details()
+            gmail = Details('Amos', 'Gmail', 'amos', 'kiplangat18')
+            gmail.save_details()
+            self.assertEqual(
+                len(Details.display_details(twitter.user_name)), 2)
+
+
 
 
 
