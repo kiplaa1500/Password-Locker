@@ -29,7 +29,7 @@ class TestUser(unittest.TestCase):
 		Test to check if the new users information is saved into the users list
 		'''
         self.new_users.save_user()
-        self.assertEqual(len(User.users_list), 3)
+        self.assertEqual(len(User.users_list), 1)
         
 class TestDetails(unittest.TestCase):
         """
@@ -92,15 +92,31 @@ class TestDetails(unittest.TestCase):
             twitter.save_details()
             gmail = Details('Amos', 'Gmail', 'amos', 'kiplangat18')
             gmail.save_details()
-            self.assertEqual(
-                len(Details.display_details(twitter.user_name)), 2)
+            self.assertEqual(len(Details.display_details(twitter.user_name)), 2)
+            
+            
+        def test_find_by_site_name(self):
+            """Test to check if the copy a details method the correct details"""
 
+            self.new_details.save_details()
+            twitter = Details('Dennis', 'Facebook', 'Kiplangat', 'kiplangat18')
+            twitter.save_details()
+            details_exists = Details.find_by_site_name('Facebook')
+            self.assertTrue(details_exists, twitter)
 
+        def test_copy_details(self):
+            """Test to check if the copy a details method the correct details"""
+            self.new_details.save_details()
+            twitter = Details('Dennis', 'Facebook', 'Kiplangat', 'kiplangat18')
+            twitter.save_details()
+            find_details = None
+            for details in Details.user_details_list:
+                find_details = Details.find_by_site_name(details.site_name)
+                return pyperclip.copy(find_details.password)
 
-
-
-
-
+            Details.copy_details(self.new_details.site_name)
+            self.assertEqual('kiplangat18', pyperclip.paste())
+            print(pyperclip.paste())
 
 if __name__ == '__main__':
 	unittest.main()
