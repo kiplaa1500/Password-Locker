@@ -30,6 +30,25 @@ class TestUser(unittest.TestCase):
 		'''
         self.new_users.save_user()
         self.assertEqual(len(User.users_list), 1)
+        
+class TestDetails(unittest.TestCase):
+        """
+        Test that checks details behaviour.
+        """
+
+        def test_check_user(self):
+            """
+            Funtion to check whether the log in deatils is working properly
+            """
+            self.new_users = User('Dennis', 'Kiplangat', 'kiplangat18')
+            self.new_users.save_user()
+            user2 = User('Enock', 'kip', 'mankip')
+            user2.save_user()
+
+            for user in User.users_list:
+                if user.first_name == user2.first_name and user.password == user2.password:
+                   current_user = user.first_name
+            return current_user
 
 
 if __name__ == '__main__':
