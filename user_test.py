@@ -49,6 +49,15 @@ class TestDetails(unittest.TestCase):
                 if user.first_name == user2.first_name and user.password == user2.password:
                    current_user = user.first_name
             return current_user
+        
+        def setUp(self):
+	        '''
+		    Function to test creation of  an account's details before each test
+		    '''
+	        self.new_details = Details(
+	            'Dennis', 'twitter', 'Kiplangat', 'kiplangat18')
+
+
 
 
 if __name__ == '__main__':
