@@ -29,7 +29,7 @@ class TestUser(unittest.TestCase):
 		Test to check if the new users information is saved into the users list
 		'''
         self.new_users.save_user()
-        self.assertEqual(len(User.users_list), 1)
+        self.assertEqual(len(User.users_list), 3)
         
 class TestDetails(unittest.TestCase):
         """
