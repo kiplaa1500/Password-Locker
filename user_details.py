@@ -26,4 +26,22 @@ class User:
         Function to save a newly created instances.
         """
         User.users_list.append(self)
-    
+        
+    class Details:
+        """
+        Class for creating account details.
+        """
+        details_list = []
+        user_details_list = []
+
+        @classmethod
+        def check_user(cls, first_name, password):
+            """
+            Its a method to check if the entered password matches the one in user list
+            """
+
+            current_user = ''
+            for user in User.users_list:
+                if (user.first_name == first_name and user.password == password):
+                    current_user = user.first_name
+            return current_user
