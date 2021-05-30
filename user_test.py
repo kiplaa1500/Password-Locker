@@ -56,6 +56,25 @@ class TestDetails(unittest.TestCase):
 		    '''
 	        self.new_details = Details(
 	            'Dennis', 'twitter', 'Kiplangat', 'kiplangat18')
+        def test__init__(self):
+            """
+            Test to check if initialization or creation is well done.
+            """
+            self.assertEqual(self.new_details.user_name, 'Dennis')
+            self.assertEqual(self.new_details.site_name, 'twitter')
+            self.assertEqual(self.new_details.account_name, 'Kiplangat')
+            self.assertEqual(self.new_details.password,'kiplangat18')
+        
+        
+        def test_save_details(self):
+            """
+            Test to check if the newly created details are saved correctly
+            """
+            self.new_details.save_details()
+            facebook=Details('Dennis', 'Facebook','Kiplangat', 'kiplangat18')
+            facebook.save_details()
+            self.assertEqual(len(Details.details_list),2)
+            
 
 
 
