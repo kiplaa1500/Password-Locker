@@ -69,3 +69,16 @@ class Details:
              """
              gen_pass = ''.join(random.choice(char) for _ in range(size))
              return gen_pass
+         
+         
+        @classmethod
+        def display_details(cls, user_name):
+	        '''
+		    Class method to display the list of details saved
+		    '''
+	        user_details_list = []
+	        for detail in cls.details_list:
+		        if detail.user_name == user_name:
+			        user_details_list.append(detail)
+	        return user_details_list
+
