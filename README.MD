@@ -42,5 +42,5 @@ Output
 
 
 ## License
-> MIT License 2021 Dennis Kiplangat
+> MIT [license] 2021 Dennis Kiplangat
 
